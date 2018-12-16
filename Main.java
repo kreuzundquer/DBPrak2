@@ -132,9 +132,13 @@ public class Main {
 
                 case clSHIP:
                 	LinkedList<String> alleBestellungen = new LinkedList<String>();
-                	System.out.println("Bitte wählen Sie eine Bestellung aus:");
+                	System.out.println("Bitte wählen Sie eine Bestellnummer aus:");
                 	Bpd initial = new Bpd(y);
-                	alleBestellungen = y.show(1);
+                	alleBestellungen = Bpd.showBestellungen(1);
+                	for (String bestellung: alleBestellungen) {
+                		System.out.println(bestellung);
+                	}
+                	int bstnr = Integer.parseInt(in.readLine());
                 	break;
                     
                     

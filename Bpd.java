@@ -10,19 +10,14 @@ public class Bpd {
 	boolean verpackt;
 
 
-	static String query = "SELECT * FROM BESTELLUNG WHERE STATUS=";
-
-
 	public Bpd(Connection connection) {
 		this.connection = connection;
 	}
 
-	public static LinkedList<String> show(int status) throws SQLException {
+	public static LinkedList<String> showBestellungen(int status) throws SQLException {
 		Statement stmt = connection.createStatement();
-
-
-        ResultSet rs = stmt.executeQuery(query + status);
-
+		String queryBestellungen = "SELECT * FROM BESTELLUNG WHERE STATUS=";
+        ResultSet rs = stmt.executeQuery(queryBestellungen + status);
 
         LinkedList<String> results = new LinkedList<>();
         String Infostring;
@@ -37,5 +32,14 @@ public class Bpd {
 		}
 
 		return results;
+	}
+	
+	public static LinkedList<Bpd> showBpos(int bstnr) throws SQLException {
+		LinkedList<Bpd> lbpos = new LinkedList<Bpd>();
+		Statement stmt = connection.createStatement();
+		String queryBpos = "SELECT * FROM BPOS WHERE BSTNR = " + bstnr +
+				"GROUP BY "
+		
+		return lbpos;
 	}
 }

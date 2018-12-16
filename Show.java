@@ -10,7 +10,7 @@ public class Show {
     String stmtWILDCARD;
     Type type;
 
-    Connection  connection;
+    Connection connection;
 
 
     public Show (Type type, Connection connection){
