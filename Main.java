@@ -131,6 +131,10 @@ public class Main {
                     break;
 
                 case clSHIP:
+                	LinkedList<String> alleBestellungen = new LinkedList<String>();
+                	System.out.println("Bitte wählen Sie eine Bestellung aus:");
+                	Bpd initial = new Bpd(y);
+                	alleBestellungen = y.show(1);
                 	break;
                     
                     
@@ -210,9 +214,9 @@ public class Main {
                 state = State.END;
                 break;
 
-                default:
-                    state = State.END;
-                    break;
+            default:
+                state = State.END;
+                break;
         }
 
         return state;
