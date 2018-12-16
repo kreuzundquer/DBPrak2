@@ -210,9 +210,9 @@ public class Main {
                 state = State.END;
                 break;
 
-                default:
-                    state = State.END;
-                    break;
+            default:
+                state = State.END;
+                break;
         }
 
         return state;
